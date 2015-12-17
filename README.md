@@ -1,19 +1,19 @@
 ## SparkExample Rank20  IMAC - BigData Team - 2015/12/16
 
-###°İÃD´y­z
+###å•é¡Œæè¿°
 
-±q[°Ó«~¥æ©ö¬ö¿ı](http://files.imaclouds.com/dataset/HMC-Contest.log) ·í¤¤¡A¦C¥X·í¤ë¾P°â³Ì¦n°Ó«~TOP20¡C
+å¾[å•†å“äº¤æ˜“ç´€éŒ„](http://files.imaclouds.com/dataset/HMC-Contest.log) ç•¶ä¸­ï¼Œåˆ—å‡ºç•¶æœˆéŠ·å”®æœ€å¥½å•†å“TOP20ã€‚
 
-###¸ê®Æ«e³B²z
+###è³‡æ–™å‰è™•ç†
 
 ```
 $ wget http://files.imaclouds.com/dataset/HMC-Contest.log
 $ cat HMC-Contest.log | grep -o "act=order.*;e" | sed "s/;e//" > RankData
 $ hadoop fs -put RankData /input/Rank
 ```
->±N¸ê®Æ°µ«e³B²z«á¡A¥i¥H±N¤£¥²­nªº¸ê®Æ±Æ°£¡A¥Ñ­ì¥»ªº1.5G¸ê®Æ­°¦Ü´XM¡A´£¤É¸ê®Æ³B²zªº¤ÀªR®Ä¯à
+>å°‡è³‡æ–™åšå‰è™•ç†å¾Œï¼Œå¯ä»¥å°‡ä¸å¿…è¦çš„è³‡æ–™æ’é™¤ï¼Œç”±åŸæœ¬çš„1.5Gè³‡æ–™é™è‡³å¹¾Mï¼Œæå‡è³‡æ–™è™•ç†çš„åˆ†ææ•ˆèƒ½
 
-###°õ¦æ¤ÀªR
+###åŸ·è¡Œåˆ†æ
 
 ```
 spark-submit --class com.imac.test.Main.class \
@@ -21,12 +21,12 @@ spark-submit --class com.imac.test.Main.class \
 /input/Rank/RankData \
 /Spark/RankOutput
 ```
-> ²Ä¤@¦æ```--class```«á­±±µ```Java```ªº```package name```©M```class name```
-> ²Ä¤G¦æ--master ¬°¨Ï¥ÎÂO¶°¼Ò¦¡¡A³oÃä±Ä¥Îyarn-cluster¡A«á­±±µ```Jar```
-> ²Ä¤T¦æ©M²Ä¥|¦æ¤À§O¬°¿é¤J¸ê®Æ©M¿é¥X¥Ø¿ı
+> ç¬¬ä¸€è¡Œ```--class```å¾Œé¢æ¥```Java```çš„```package name```å’Œ```class name```  
+> ç¬¬äºŒè¡Œ--master ç‚ºä½¿ç”¨å¢é›†æ¨¡å¼ï¼Œé€™é‚Šæ¡ç”¨yarn-clusterï¼Œå¾Œé¢æ¥```Jar```  
+> ç¬¬ä¸‰è¡Œå’Œç¬¬å››è¡Œåˆ†åˆ¥ç‚ºè¼¸å…¥è³‡æ–™å’Œè¼¸å‡ºç›®éŒ„
 
-###¿é¥Xµ²ªG
->¤ÀªR¦¨¥\«á¡A¥i¥H¨Ï¥Î```hadoop fs -cat /Spark/RankOutput/part-00000```«ü¥O¦C¥Xµ²ªG¡A¦p¤U:
+###è¼¸å‡ºçµæœ
+>åˆ†ææˆåŠŸå¾Œï¼Œå¯ä»¥ä½¿ç”¨```hadoop fs -cat /Spark/RankOutput/part-00000```æŒ‡ä»¤åˆ—å‡ºçµæœï¼Œå¦‚ä¸‹:
 
 ```
 01 0006584093
