@@ -27,8 +27,9 @@ public class Main {
 		
 		SparkConf conf = new SparkConf();
 		conf.setAppName("RankSpark");
+		conf.setMaster("yarn-cluster");
 		
-		JavaSparkContext sc = new JavaSparkContext();
+		JavaSparkContext sc = new JavaSparkContext(conf);
 		JavaRDD<String> file = sc.textFile(args[0]);
 		
 		JavaPairRDD<String, Integer> flatMapToPair = file.flatMapToPair(new PairFlatMapFunction<String, String, Integer>() {

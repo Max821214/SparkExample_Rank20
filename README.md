@@ -16,17 +16,17 @@ $ hadoop fs -put RankData /input/Rank
 ###執行分析
 
 ```
-spark-submit --class com.imac.test.Main.class \
+spark-submit --class com.imac.test.Main \
 --master yarn-cluster Rank.jar \
 /input/Rank/RankData \
-/Spark/RankOutput
+/spark/RankOutput
 ```
 > 第一行```--class```後面接```Java```的```package name```和```class name```  
 > 第二行--master 為使用叢集模式，這邊採用yarn-cluster，後面接```Jar```  
 > 第三行和第四行分別為輸入資料和輸出目錄
 
 ###輸出結果
->分析成功後，可以使用```hadoop fs -cat /Spark/RankOutput/part-00000```指令列出結果，如下:
+>分析成功後，可以使用```hadoop fs -cat /spark/RankOutput/part-00000```指令列出結果，如下:
 
 ```
 01 0006584093
